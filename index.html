@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocos y Snacks Lupita 🥥🤤</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF512F;
+            --secondary: #DD2476;
+            --accent: #25D366;
+            --dark: #333333;
+            --light: #F8F9FA;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fredoka One', cursive;
+            letter-spacing: 1px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .btn-whatsapp-large {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s;
+        }
+
+        .btn-whatsapp-large:hover {
+            transform: scale(1.05);
+        }
+
+        /* INFO & PAYMENT SECTION */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: -50px auto 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .info-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .payment-card {
+            background: linear-gradient(135deg, #FF512F 0%, #F09819 100%);
+            color: white;
+            border: 3px dashed white;
+        }
+
+        .payment-card i, .payment-card h3, .payment-card p {
+            color: white;
+        }
+
+        .payment-card strong {
+            font-size: 1.2rem;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            letter-spacing: 2px;
+        }
+
+        /* GALLERY SECTION */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 250px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            color: white;
+            padding: 30px 15px 15px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            font-family: 'Fredoka One', cursive;
+            text-align: center;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        /* MENU SECTION */
+        .menu-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .menu-category {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .menu-category h2 {
+            color: var(--secondary);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 12px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-details {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .item-name {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+
+        .item-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+
+        /* FLOATING WHATSAPP BUTTON */
+        .float-wa {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--accent);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .section-title { font-size: 2rem; }
+            .menu-category h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>COCOS Y SNACKS LUPITA</h1>
+        <p>¡El mejor sabor para calmar tu antojo! 🤤🍓🍤</p>
+        <a href="https://wa.me/526971129791?text=¡Hola!%20Me%20gustaría%20hacer%20un%20pedido%20para%20recoger%20en%20Cocos%20y%20Snacks%20Lupita%20🤤" target="_blank" class="btn-whatsapp-large">
+            <i class="fab fa-whatsapp"></i> ORDENAR AHORA
+        </a>
+    </header>
+
+    <section class="info-grid">
+        <div class="info-card">
+            <i class="fas fa-clock"></i>
+            <h3>Horario</h3>
+            <p><strong>Todos los días</strong></p>
+            <p>Apertura: 1:00 PM</p>
+            <p>Cierre: 12:00 AM</p>
+        </div>
+
+        <div class="info-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Ubicación Glorieta Pato Bobo (La Reforma, Sin)</h3>
+            <p>Ven a visitarnos o pide para recoger.</p>
+            <br>
+            <a href="https://maps.app.goo.gl/QD6VJK9H161w9gaLA" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: none;">
+                📍 Abrir en Google Maps
+            </a>
+        </div>
+
+        <div class="info-card payment-card">
+            <i class="fas fa-money-bill-wave"></i>
+            <h3>Formas de Pago</h3>
+            <p>💳 <strong>EFECTIVO</strong> y <strong>TRANSFERENCIA</strong></p>
+            <hr style="border:1px solid rgba(255,255,255,0.3); margin: 10px 0;">
+            <p style="font-size: 0.9rem;"><strong>BanCoppel</strong><br>
+            Guadalupe Mejía Sánchez</p>
+            <strong>4169 1608 3989 0044</strong>
+        </div>
+    </section>
+
+    <!-- CATÁLOGO VISUAL -->
+    <section class="gallery-container">
+        <h2 class="section-title">¡Antójate! 😍</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="TostilocosySnacks.jpg" alt="Snacks y Tosti-locos">
+                <div class="gallery-overlay">Snacks Locos</div>
+            </div>
+            <div class="gallery-item">
+                <img src="Campechanas.jpg" alt="Mariscos Frescos">
+                <div class="gallery-overlay">Mariscos Frescos</div>
+            </div>
+            <div class="gallery-item">
+                <img src="cocos.jpg" alt="Cocos Locos">
+                <div class="gallery-overlay">Cocos y Más</div>
+            </div>
+            <div class="gallery-item">
+                <img src="Fresas.jpg" alt="Fresas con Crema">
+                <div class="gallery-overlay">Fresas con Crema</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-container">
+        <h2 class="section-title">Nuestro Menú</h2>
+
+        <!-- SNACKS -->
+        <div class="menu-category">
+            <h2><i class="fas fa-chips"></i>🍟 Snacks</h2>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Cevichurros</div></div><div class="item-price">$60 / $70</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Cacahuatadas</div></div><div class="item-price">$60 / $70</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Tosti-locos</div></div><div class="item-price">$100</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Papas-locas</div></div><div class="item-price">$100</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Papas salseadas</div></div><div class="item-price">$65</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Tosti-esquites</div></div><div class="item-price">$100</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Esquite</div></div><div class="item-price">$40 / $50</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Nieve</div></div><div class="item-price">$40</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Chimichangas</div></div><div class="item-price">$50</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Viejitas</div></div><div class="item-price">$30</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Sabritas</div></div><div class="item-price">$30</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Raspados</div></div><div class="item-price">$30 / $40 / $50</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Helados</div></div><div class="item-price">$25</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Chocobananas</div></div><div class="item-price">$15 / $20</div></div>
+        </div>
+
+        <!-- BEBIDAS -->
+        <div class="menu-category">
+            <h2><i class="fas fa-glass-water"></i>🥤 Bebidas</h2>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Refresco</div></div><div class="item-price">$30</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Jugo chico</div></div><div class="item-price">$20</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Jugo grande</div></div><div class="item-price">$30</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Té</div></div><div class="item-price">$30</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Powerade</div></div><div class="item-price">$45</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Clamato preparado</div></div><div class="item-price">$120</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Agua Natural (Litro)</div></div><div class="item-price">$30</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Aguas frescas</div></div><div class="item-price">$25 / $35</div></div>
+        </div>
+
+        <!-- RAMEN -->
+        <div class="menu-category">
+            <h2><i class="fas fa-bowl-food"></i>🍜 Ramen</h2>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Maruchan sencilla</div></div><div class="item-price">$50</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Maruchan chorreada</div></div><div class="item-price">$120</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Maruchan chorreada (con sabritas)</div></div><div class="item-price">$150</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Ramen Coreano Buldak</div></div><div class="item-price">$150</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Ramen coreano Buldak (con esquite y sabritas)</div></div><div class="item-price">$175</div></div>
+        </div>
+
+        <!-- MARISCOS -->
+        <div class="menu-category">
+            <h2><i class="fas fa-shrimp"></i>🍤 Mariscos</h2>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Tosti-mariscos</div><div class="item-desc">Camarón cocido, crudo, verdura (chile, tomate, cebolla, pepino), tostitos y sus salsas.</div></div><div class="item-price">$150</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Campechana</div><div class="item-desc">Camarón cocido, verduras (tómate, cebolla, chile y pepino) y sus salsas.</div></div><div class="item-price">$130</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Camarón cocido</div><div class="item-desc">Camarón cocido con cáscara y con su jugo de limón.</div></div><div class="item-price">$150</div></div>
+        </div>
+
+        <!-- COCOS -->
+        <div class="menu-category">
+            <h2><i class="fas fa-leaf"></i>🥥 Cocos</h2>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Coco Natural</div><div class="item-desc">Limón, sal, tajín, salsa y chamoy.</div></div><div class="item-price">$90</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Coco Endiablado</div><div class="item-desc">Cacahuate, pepino, tarugo, serpentina y sus salsas.</div></div><div class="item-price">$120</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Coco Loco</div><div class="item-desc">Sabritas, churros, cacahuate, pepino, salchicha, tarugo, serpentina y sus salsas.</div></div><div class="item-price">$150</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Coco Marisco (Litro)</div><div class="item-desc">Camarón cocido, crudo o mixto, verduras y salsas.</div></div><div class="item-price">$200</div></div>
+        </div>
+
+        <!-- FRESAS CON CREMA -->
+        <div class="menu-category">
+            <h2><i class="fas fa-ice-cream"></i>🍓 Fresas con crema</h2>
+            <p style="font-size:0.9rem; color:#DD2476; margin-bottom:15px; font-weight:bold;">*De cartón o Naturales, especificar al pedir*</p>
+            
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Fresas sencillas</div>
+                    <div class="item-desc">Fresas con crema y lechera.</div>
+                </div>
+                <div class="item-price">$80</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Fresas con Cheesecake (Pay)</div>
+                    <div class="item-desc">Sabor: Limón, Frambuesa y Chocolate.</div>
+                </div>
+                <div class="item-price">$100</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Fresas con Nieve</div>
+                    <div class="item-desc">Fresas con crema, Lechera y nieve de costco.</div>
+                </div>
+                <div class="item-price">$100</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Fresas combinadas</div>
+                    <div class="item-desc">Fresas con crema, Lechera, Cheesecake y nieve de costco.</div>
+                </div>
+                <div class="item-price">$100</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Fresas de Bubulubu</div>
+                    <div class="item-desc">Fresas con crema, Lechera, Nieve y Bubulubu.</div>
+                </div>
+                <div class="item-price">$100</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Fresas de Snickers</div>
+                    <div class="item-desc">Fresas con crema, Lechera, Nieve y Snickers.</div>
+                </div>
+                <div class="item-price">$100</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Fresas de Paleta Payaso</div>
+                    <div class="item-desc">Fresas con crema, Lechera, Nieve y Paleta Payaso.</div>
+                </div>
+                <div class="item-price">$100</div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <h2>Cocos y Snacks Lupita</h2>
+        <p>¡Gracias por tu preferencia!</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; color: #aaa;">&copy; 2026 Todos los derechos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/526971129791?text=¡Hola!%20Me%20gustaría%20hacer%20un%20pedido%20para%20recoger%20en%20Cocos%20y%20Snacks%20Lupita%20🤤" class="float-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
