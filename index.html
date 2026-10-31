@@ -1,3 +1,6 @@
+Aquí tienes la página optimizada con los precios retirados, un botón de WhatsApp integrado directamente en cada producto del menú, y un banner estratégico para posicionarte como la opción con los mejores precios en la Glorieta del Pato Bobo.
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -117,6 +120,49 @@
             letter-spacing: 2px;
         }
 
+        /* MARKETING BANNER */
+        .best-price-banner {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #333;
+            text-align: center;
+            padding: 35px 20px;
+            border-radius: 15px;
+            max-width: 1000px;
+            margin: 20px auto 40px;
+            box-shadow: 0 8px 25px rgba(255, 165, 0, 0.3);
+            border: 2px solid #FFF;
+        }
+
+        .best-price-banner h2 {
+            color: #D2691E;
+            margin-bottom: 15px;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+        }
+
+        .best-price-banner p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .btn-banner {
+            display: inline-block;
+            background: var(--dark);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .btn-banner:hover {
+            transform: scale(1.05);
+            background: #000;
+        }
+
         /* GALLERY SECTION */
         .gallery-container {
             max-width: 1200px;
@@ -201,8 +247,8 @@
         .menu-item {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            padding: 12px 0;
+            align-items: center;
+            padding: 15px 0;
             border-bottom: 1px dashed #ddd;
         }
 
@@ -227,11 +273,23 @@
             margin-top: 4px;
         }
 
-        .item-price {
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 1.1rem;
+        .item-wa-btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: transform 0.2s;
             white-space: nowrap;
+        }
+
+        .item-wa-btn:hover {
+            transform: scale(1.05);
         }
 
         /* FLOATING WHATSAPP BUTTON */
@@ -273,6 +331,7 @@
             .hero h1 { font-size: 2.2rem; }
             .section-title { font-size: 2rem; }
             .menu-category h2 { font-size: 1.5rem; }
+            .best-price-banner h2 { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -297,7 +356,7 @@
 
         <div class="info-card">
             <i class="fas fa-map-marker-alt"></i>
-            <h3>Ubicación Glorieta Pato Bobo (La Reforma, Sin)</h3>
+            <h3>Ubicación Glorieta Pato Bobo</h3>
             <p>Ven a visitarnos o pide para recoger.</p>
             <br>
             <a href="https://maps.app.goo.gl/QD6VJK9H161w9gaLA" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: none;">
@@ -315,6 +374,15 @@
             <strong>4169 1608 3989 0044</strong>
         </div>
     </section>
+
+    <!-- BANNER DE MEJORES PRECIOS -->
+    <div class="best-price-banner">
+        <h2>🏆 ¡El Mejor Precio Garantizado! 🏆</h2>
+        <p>Calidad y porciones inigualables. ¡Comprueba por qué tenemos los precios más justos de toda la <strong>Glorieta del Pato Bobo y La Reforma</strong>!</p>
+        <a href="https://wa.me/526971074540?text=¡Hola!%20Me%20interesa%20conocer%20los%20precios%20de%20sus%20antojos%20🤤" class="btn-banner" target="_blank">
+            <i class="fas fa-tag"></i> Consultar precios por WhatsApp
+        </a>
+    </div>
 
     <!-- CATÁLOGO VISUAL -->
     <section class="gallery-container">
@@ -345,60 +413,58 @@
         <!-- SNACKS -->
         <div class="menu-category">
             <h2><i class="fas fa-chips"></i>🍟 Snacks</h2>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Cevichurros</div></div><div class="item-price">$60 / $70</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Cacahuatadas</div></div><div class="item-price">$60 / $70</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Tosti-locos</div></div><div class="item-price">$100</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Papas-locas</div></div><div class="item-price">$100</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Papas salseadas</div></div><div class="item-price">$65</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Tosti-esquites</div></div><div class="item-price">$100</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Esquite</div></div><div class="item-price">$40 / $50</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Nieve</div></div><div class="item-price">$40</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Chimichangas</div></div><div class="item-price">$50</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Viejitas</div></div><div class="item-price">$30</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Sabritas</div></div><div class="item-price">$30</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Raspados</div></div><div class="item-price">$30 / $40 / $50</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Helados</div></div><div class="item-price">$25</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Chocobananas</div></div><div class="item-price">$15 / $20</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Cevichurros</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Cevichurros%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Cacahuatadas</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Cacahuatadas%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Tosti-locos</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Tosti-locos%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Papas-locas</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Papas-locas%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Papas salseadas</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Papas%20salseadas%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Tosti-esquites</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Tosti-esquites%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Esquite</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Esquite%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Nieve</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Nieve%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Chimichangas</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Chimichangas%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Viejitas</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Viejitas%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Sabritas</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Sabritas%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Raspados</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Raspados%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Helados</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Helados%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Chocobananas</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Chocobananas%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
         </div>
 
         <!-- BEBIDAS -->
         <div class="menu-category">
             <h2><i class="fas fa-glass-water"></i>🥤 Bebidas</h2>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Refresco</div></div><div class="item-price">$30</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Jugo chico</div></div><div class="item-price">$20</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Jugo grande</div></div><div class="item-price">$30</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Té</div></div><div class="item-price">$30</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Powerade</div></div><div class="item-price">$45</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Clamato preparado</div></div><div class="item-price">$120</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Agua Natural (Litro)</div></div><div class="item-price">$30</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Aguas frescas</div></div><div class="item-price">$25 / $35</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Refresco</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Refresco%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Jugo chico / grande</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Jugos%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Té</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Té%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Powerade</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Powerade%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Clamato preparado</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Clamato%20preparado%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Agua Natural / Frescas</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Agua%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
         </div>
 
         <!-- RAMEN -->
         <div class="menu-category">
             <h2><i class="fas fa-bowl-food"></i>🍜 Ramen</h2>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Maruchan sencilla</div></div><div class="item-price">$50</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Maruchan chorreada</div></div><div class="item-price">$120</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Maruchan chorreada (con sabritas)</div></div><div class="item-price">$150</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Ramen Coreano Buldak</div></div><div class="item-price">$150</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Ramen coreano Buldak (con esquite y sabritas)</div></div><div class="item-price">$175</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Maruchan sencilla</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Maruchan%20sencilla%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Maruchan chorreada</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Maruchan%20chorreada%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Maruchan chorreada con sabritas</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Maruchan%20chorreada%20especial%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Ramen Coreano Buldak</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Ramen%20Coreano%20Buldak%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Buldak con esquite y sabritas</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Buldak%20con%20esquite%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
         </div>
 
         <!-- MARISCOS -->
         <div class="menu-category">
             <h2><i class="fas fa-shrimp"></i>🍤 Mariscos</h2>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Tosti-mariscos</div><div class="item-desc">Camarón cocido, crudo, verdura (chile, tomate, cebolla, pepino), tostitos y sus salsas.</div></div><div class="item-price">$150</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Campechana</div><div class="item-desc">Camarón cocido, verduras (tómate, cebolla, chile y pepino) y sus salsas.</div></div><div class="item-price">$130</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Camarón cocido</div><div class="item-desc">Camarón cocido con cáscara y con su jugo de limón.</div></div><div class="item-price">$150</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Tosti-mariscos</div><div class="item-desc">Camarón cocido, crudo, verdura, tostitos y salsas.</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Tosti-mariscos%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Campechana</div><div class="item-desc">Camarón cocido, verduras y sus salsas.</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Campechana%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Camarón cocido</div><div class="item-desc">Camarón cocido con cáscara y limón.</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Camarón%20cocido%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
         </div>
 
         <!-- COCOS -->
         <div class="menu-category">
             <h2><i class="fas fa-leaf"></i>🥥 Cocos</h2>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Coco Natural</div><div class="item-desc">Limón, sal, tajín, salsa y chamoy.</div></div><div class="item-price">$90</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Coco Endiablado</div><div class="item-desc">Cacahuate, pepino, tarugo, serpentina y sus salsas.</div></div><div class="item-price">$120</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Coco Loco</div><div class="item-desc">Sabritas, churros, cacahuate, pepino, salchicha, tarugo, serpentina y sus salsas.</div></div><div class="item-price">$150</div></div>
-            <div class="menu-item"><div class="item-details"><div class="item-name">Coco Marisco (Litro)</div><div class="item-desc">Camarón cocido, crudo o mixto, verduras y salsas.</div></div><div class="item-price">$200</div></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Coco Natural</div><div class="item-desc">Limón, sal, tajín, salsa y chamoy.</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Coco%20Natural%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Coco Endiablado</div><div class="item-desc">Cacahuate, pepino, tarugo, serpentina y salsas.</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Coco%20Endiablado%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Coco Loco</div><div class="item-desc">Sabritas, churros, salchicha y más.</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Coco%20Loco%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
+            <div class="menu-item"><div class="item-details"><div class="item-name">Coco Marisco</div><div class="item-desc">Camarón cocido, crudo o mixto y verduras.</div></div><a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Coco%20Marisco%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a></div>
         </div>
 
         <!-- FRESAS CON CREMA -->
@@ -411,7 +477,7 @@
                     <div class="item-name">Fresas sencillas</div>
                     <div class="item-desc">Fresas con crema y lechera.</div>
                 </div>
-                <div class="item-price">$80</div>
+                <a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Fresas%20sencillas%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a>
             </div>
             
             <div class="menu-item">
@@ -419,50 +485,17 @@
                     <div class="item-name">Fresas con Cheesecake (Pay)</div>
                     <div class="item-desc">Sabor: Limón, Frambuesa y Chocolate.</div>
                 </div>
-                <div class="item-price">$100</div>
+                <a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Fresas%20con%20Cheesecake%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a>
             </div>
             
             <div class="menu-item">
                 <div class="item-details">
-                    <div class="item-name">Fresas con Nieve</div>
-                    <div class="item-desc">Fresas con crema, Lechera y nieve de costco.</div>
+                    <div class="item-name">Fresas Especiales</div>
+                    <div class="item-desc">Con Nieve, combinadas, o con dulces (Bubulubu, Snickers, Paleta Payaso).</div>
                 </div>
-                <div class="item-price">$100</div>
-            </div>
-            
-            <div class="menu-item">
-                <div class="item-details">
-                    <div class="item-name">Fresas combinadas</div>
-                    <div class="item-desc">Fresas con crema, Lechera, Cheesecake y nieve de costco.</div>
-                </div>
-                <div class="item-price">$100</div>
-            </div>
-            
-            <div class="menu-item">
-                <div class="item-details">
-                    <div class="item-name">Fresas de Bubulubu</div>
-                    <div class="item-desc">Fresas con crema, Lechera, Nieve y Bubulubu.</div>
-                </div>
-                <div class="item-price">$100</div>
-            </div>
-            
-            <div class="menu-item">
-                <div class="item-details">
-                    <div class="item-name">Fresas de Snickers</div>
-                    <div class="item-desc">Fresas con crema, Lechera, Nieve y Snickers.</div>
-                </div>
-                <div class="item-price">$100</div>
-            </div>
-            
-            <div class="menu-item">
-                <div class="item-details">
-                    <div class="item-name">Fresas de Paleta Payaso</div>
-                    <div class="item-desc">Fresas con crema, Lechera, Nieve y Paleta Payaso.</div>
-                </div>
-                <div class="item-price">$100</div>
+                <a href="https://wa.me/526971074540?text=¡Hola!%20Quiero%20pedir%20Fresas%20Especiales%20🤤" class="item-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> Pedir</a>
             </div>
         </div>
-
     </section>
 
     <footer>
@@ -471,9 +504,11 @@
         <p style="font-size: 0.8rem; margin-top: 10px; color: #aaa;">&copy; 2026 Todos los derechos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/526971074540?text=¡Hola!%20Me%20gustaría%20hacer%20un%20pedido%20para%20recoger%20en%20Cocos%20y%20Snacks%20Lupita%20🤤" class="float-wa" target="_blank">
+    <a href="https://wa.me/526971074540?text=¡Hola!%20Me%20gustaría%20conocer%20el%20menú%20y%20hacer%20un%20pedido%20para%20recoger%20en%20Cocos%20y%20Snacks%20Lupita%20🤤" class="float-wa" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
 </body>
 </html>
+
+```
